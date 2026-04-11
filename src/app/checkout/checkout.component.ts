@@ -2,7 +2,43 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-checkout',
-  template: `<h2>Checkout</h2>`,
+  template: `
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-semibold text-gray-800 mb-6">Checkout</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-medium text-gray-700 mb-4">Shipping Information</h3>
+            <form class="space-y-4">
+              <input type="text" placeholder="Full Name" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <input type="email" placeholder="Email" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <input type="text" placeholder="Address" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <input type="text" placeholder="City" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <input type="text" placeholder="Postal Code" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </form>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium text-gray-700 mb-4">Payment Method</h3>
+            <div class="space-y-4">
+              <label class="flex items-center">
+                <input type="radio" name="payment" class="mr-2">
+                <span>Credit Card</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="payment" class="mr-2">
+                <span>PayPal</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="payment" class="mr-2">
+                <span>Bank Transfer</span>
+              </label>
+            </div>
+            <button class="mt-6 bg-indigo-600 text-white py-3 px-6 rounded hover:bg-indigo-700 transition w-full">Place Order</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  `,
   standalone: true
 })
 export class CheckoutComponent {}
