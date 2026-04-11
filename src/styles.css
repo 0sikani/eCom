@@ -3,4 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles below if needed */
+/* Global subtle shadow for cards */
+.card {
+  @apply rounded-xl shadow-sm hover:shadow-md transition-shadow;
+}
