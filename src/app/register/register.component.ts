@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-register',
   template: `
-    <section class="py-8">
+    <section class="py-12">
       <div class="max-w-3xl mx-auto px-4">
         <h2 class="text-3xl font-extrabold text-gray-900 mb-6 text-center">Register</h2>
         <form class="space-y-4">

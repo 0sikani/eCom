@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-product-detail',
   template: `
-    <section class="py-8">
+    <section class="py-12">
       <div class="max-w-7xl mx-auto px-4">
-        <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex flex-col lg:flex-row gap-12">
           <div class="lg:w-1/2">
             <img src="https://via.placeholder.com/600x600" alt="Product Image" class="w-full rounded-lg shadow-md">
           </div>
