@@ -1,36 +1,51 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
+  standalone: true,
+  imports: [RouterLink],
   template: `
     <section class="py-16">
-      <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-4xl font-extrabold text-gray-900 mb-12">Your Cart</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 flex items-center">
-            <img src="https://via.placeholder.com/100" alt="Item" class="w-24 h-24 object-cover rounded mr-6">
-            <div class="flex-1">
-              <h3 class="text-lg font-medium text-gray-800">Product Name</h3>
-              <p class="text-base text-gray-600">$19.99</p>
+      <div class="max-w-5xl mx-auto px-6">
+
+        <h1 class="text-3xl font-bold mb-10">Shopping Cart</h1>
+
+        <div class="space-y-6">
+
+          @for (item of [1,2]; track item) {
+            <div class="flex items-center justify-between bg-white p-5 rounded-xl shadow-sm">
+
+              <div class="flex items-center gap-4">
+                <img src="https://via.placeholder.com/80"
+                     class="rounded-lg w-20 h-20"/>
+
+                <div>
+                  <h3 class="font-semibold">Product Name</h3>
+                  <p class="text-gray-500">$49.99</p>
+                </div>
+              </div>
+
+              <button class="text-red-500 hover:text-red-700">
+                Remove
+              </button>
+
             </div>
-            <button class="text-red-600 hover:text-red-800">Remove</button>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 flex items-center">
-            <img src="https://via.placeholder.com/100" alt="Item" class="w-24 h-24 object-cover rounded mr-6">
-            <div class="flex-1">
-              <h3 class="text-lg font-medium text-gray-800">Product Name</h3>
-              <p class="text-base text-gray-600">$29.99</p>
-            </div>
-            <button class="text-red-600 hover:text-red-800">Remove</button>
-          </div>
+          }
+
         </div>
-        <div class="mt-12 flex flex-col md:flex-row justify-between items-center">
-          <div class="text-2xl font-semibold text-gray-900">Total: $49.98</div>
-          <button class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition mt-4 md:mt-0">Proceed to Checkout</button>
+
+        <div class="mt-10 flex justify-between items-center">
+          <span class="text-xl font-bold">Total: $99.98</span>
+
+          <a routerLink="/checkout"
+             class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
+            Checkout
+          </a>
         </div>
+
       </div>
     </section>
-  `,
-  standalone: true
+  `
 })
 export class CartComponent {}

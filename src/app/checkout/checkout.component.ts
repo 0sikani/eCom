@@ -2,43 +2,39 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-checkout',
+  standalone: true,
   template: `
     <section class="py-16">
-      <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-4xl font-extrabold text-gray-900 mb-12">Checkout</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Shipping Information</h3>
-            <form class="space-y-4">
-              <input type="text" placeholder="Full Name" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              <input type="email" placeholder="Email" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              <input type="text" placeholder="Address" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              <input type="text" placeholder="City" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              <input type="text" placeholder="Postal Code" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            </form>
+      <div class="max-w-4xl mx-auto px-6">
+
+        <h1 class="text-3xl font-bold mb-10">Checkout</h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <div class="bg-white p-6 rounded-xl shadow-sm space-y-4">
+            <h2 class="font-semibold text-lg">Shipping</h2>
+
+            <input class="input" placeholder="Full Name">
+            <input class="input" placeholder="Email">
+            <input class="input" placeholder="Address">
           </div>
-          <div>
-            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Payment Method</h3>
-            <div class="space-y-4">
-              <label class="flex items-center">
-                <input type="radio" name="payment" class="mr-3">
-                <span>Credit Card</span>
-              </label>
-              <label class="flex items-center">
-                <input type="radio" name="payment" class="mr-3">
-                <span>PayPal</span>
-              </label>
-              <label class="flex items-center">
-                <input type="radio" name="payment" class="mr-3">
-                <span>Bank Transfer</span>
-              </label>
-            </div>
-            <button class="mt-6 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition w-full">Place Order</button>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h2 class="font-semibold text-lg mb-4">Summary</h2>
+
+            <p class="flex justify-between mb-2">
+              <span>Subtotal</span><span>$99.98</span>
+            </p>
+
+            <button class="mt-6 w-full bg-indigo-600 text-white py-3 rounded-lg">
+              Place Order
+            </button>
           </div>
+
         </div>
+
       </div>
     </section>
-  `,
-  standalone: true
+  `
 })
 export class CheckoutComponent {}

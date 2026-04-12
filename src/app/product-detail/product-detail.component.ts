@@ -1,24 +1,39 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
+  standalone: true,
+  imports: [RouterLink],
   template: `
     <section class="py-16">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="flex flex-col lg:flex-row gap-12">
-          <div class="lg:w-1/2">
-            <img src="https://via.placeholder.com/600x600" alt="Product Image" class="w-full rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          </div>
-          <div class="lg:w-1/2">
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Product Title</h2>
-            <p class="text-2xl text-indigo-600 mb-6">$19.99</p>
-            <p class="text-base text-gray-700 mb-8">Detailed description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition">Add to Cart</button>
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+
+        <img src="https://via.placeholder.com/600"
+             class="rounded-2xl shadow-md"/>
+
+        <div>
+          <h1 class="text-4xl font-bold mb-4">Premium Product</h1>
+          <p class="text-2xl text-indigo-600 font-semibold mb-6">$49.99</p>
+
+          <p class="text-gray-600 mb-8">
+            Beautiful high-quality product designed for modern lifestyle.
+          </p>
+
+          <div class="flex gap-4">
+            <button class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
+              Add to Cart
+            </button>
+
+            <a routerLink="/cart"
+               class="border px-6 py-3 rounded-lg hover:bg-gray-100">
+              Go to Cart
+            </a>
           </div>
         </div>
+
       </div>
     </section>
-  `,
-  standalone: true
+  `
 })
 export class ProductDetailComponent {}

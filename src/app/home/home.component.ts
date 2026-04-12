@@ -1,28 +1,89 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
+  imports: [RouterLink],
   template: `
-    <section class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4">
-        <h1 class="text-5xl font-extrabold text-center text-gray-900 mb-12">Welcome to ECom</h1>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 text-center">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-3">Featured Product 1</h2>
-            <p class="text-base text-gray-600">Short description of product 1.</p>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 text-center">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-3">Featured Product 2</h2>
-            <p class="text-base text-gray-600">Short description of product 2.</p>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 text-center">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-3">Featured Product 3</h2>
-            <p class="text-base text-gray-600">Short description of product 3.</p>
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-indigo-600 to-purple-600 text-white py-20">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+          Shop Smarter. Live Better.
+        </h1>
+        <p class="text-lg md:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
+          Discover premium products curated just for you. Quality meets style.
+        </p>
+        <a
+          routerLink="/products"
+          class="inline-block bg-white text-indigo-600 font-semibold px-8 py-3 rounded-lg shadow hover:shadow-lg hover:scale-105 transition"
+        >
+          Shop Now
+        </a>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center mb-10">
+          <h2 class="text-3xl font-bold text-gray-900">Featured Products</h2>
+          <a routerLink="/products" class="text-indigo-600 hover:underline">
+            View all →
+          </a>
+        </div>
+
+        <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+          <div
+            *ngFor="let product of [1,2,3]"
+            class="bg-white rounded-xl shadow-sm hover:shadow-xl transition p-5 group"
+          >
+            <div class="overflow-hidden rounded-lg mb-4">
+              <img
+                src="https://via.placeholder.com/300"
+                class="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">
+              Premium Product
+            </h3>
+            <p class="text-gray-500 text-sm mb-3">
+              High-quality item for everyday use.
+            </p>
+
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-gray-900">$49.99</span>
+              <a
+                routerLink="/products/1"
+                class="text-sm bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
+              >
+                View
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  `,
-  standalone: true
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-white text-center">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Ready to upgrade your lifestyle?
+        </h2>
+        <p class="text-gray-600 mb-6">
+          Join thousands of happy customers shopping with us.
+        </p>
+        <a
+          routerLink="/register"
+          class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition shadow"
+        >
+          Get Started
+        </a>
+      </div>
+    </section>
+  `
 })
 export class HomeComponent {}
