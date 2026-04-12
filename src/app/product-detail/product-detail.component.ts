@@ -10,18 +10,18 @@ import { RouterLink } from '@angular/router';
       <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
 
         <img src="https://via.placeholder.com/600"
-             class="rounded-2xl shadow-md"/>
+             class="rounded-2xl shadow-md" class="hover:scale-105 active:scale-95 transition duration-200"/>
 
         <div>
           <h1 class="text-4xl font-bold mb-4">Premium Product</h1>
           <p class="text-2xl text-indigo-600 font-semibold mb-6">$49.99</p>
 
-          <p class="text-gray-600 mb-8">
+          <p class="text-gray-600 dark:text-gray-400 mb-8">
             Beautiful high-quality product designed for modern lifestyle.
           </p>
 
           <div class="flex gap-4">
-            <button class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
+            <button class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700" class="hover:scale-105 active:scale-95 transition duration-200">
               Add to Cart
             </button>
 

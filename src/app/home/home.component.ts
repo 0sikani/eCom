@@ -25,10 +25,12 @@ import { RouterLink } from '@angular/router';
     </section>
 
     <!-- Featured Products -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-gray-50 dark:bg-gray-950">
       <div class="max-w-7xl mx-auto px-6">
         <div class="flex justify-between items-center mb-10">
-          <h2 class="text-3xl font-bold text-gray-900">Featured Products</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100">
+              Featured Products
+          </h2>
           <a routerLink="/products" class="text-indigo-600 hover:underline">
             View all →
           </a>
@@ -43,7 +45,7 @@ import { RouterLink } from '@angular/router';
               <img
                 src="https://via.placeholder.com/300"
                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
-              />
+              class="hover:scale-105 active:scale-95 transition duration-200"/>
             </div>
 
             <h3 class="text-lg font-semibold text-gray-800 mb-1">
@@ -73,7 +75,7 @@ import { RouterLink } from '@angular/router';
         <h2 class="text-3xl font-bold text-gray-900 mb-4">
           Ready to upgrade your lifestyle?
         </h2>
-        <p class="text-gray-600 mb-6">
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
           Join thousands of happy customers shopping with us.
         </p>
         <a

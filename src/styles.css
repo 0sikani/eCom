@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth UI feel */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Reusable input */
 .input {
-  @apply w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 outline-none;
+  @apply w-full border border-gray-300 rounded-lg px-4 py-2 
+         focus:ring-2 focus:ring-indigo-500 outline-none
+         dark:bg-gray-800 dark:border-gray-700 dark:text-white;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply bg-indigo-600 text-white px-5 py-2.5 rounded-lg 
+         hover:bg-indigo-700 active:scale-95 transition;
+}
+
+.btn-secondary {
+  @apply border px-5 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800;
+}
+
+/* Card */
+.card {
+  @apply bg-white dark:bg-gray-900 rounded-2xl shadow-sm 
+         hover:shadow-xl transition;
+}
+
+/* Skeleton loader */
+.skeleton {
+  @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+}
+
+
+.skeleton {
+  @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
 }

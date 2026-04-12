@@ -1,24 +1,35 @@
-<div class="min-h-screen flex flex-col bg-gray-50">
+<div class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
 
   <!-- Navbar -->
-  <header class="bg-white border-b sticky top-0 z-50">
+  <header class="bg-white dark:bg-gray-900 border-b dark:border-gray-800">
     <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      
-      <a routerLink="/" class="text-2xl font-extrabold text-indigo-600">
-        ECom
-      </a>
 
-      <div class="flex items-center gap-6 text-sm font-medium">
-        <a routerLink="/" class="hover:text-indigo-600 transition">Home</a>
-        <a routerLink="/products" class="hover:text-indigo-600 transition">Shop</a>
-        <a routerLink="/cart" class="hover:text-indigo-600 transition">Cart</a>
-        <a routerLink="/login" class="hover:text-indigo-600 transition">Login</a>
-        <a routerLink="/register"
-           class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
-          Sign up
-        </a>
-      </div>
-    </nav>
+  <a routerLink="/" class="text-2xl font-extrabold text-indigo-600">
+    eCom
+  </a>
+
+  <div class="flex items-center gap-6 text-sm font-medium">
+
+    <a routerLink="/" routerLinkActive="text-indigo-600">Home</a>
+    <a routerLink="/products" routerLinkActive="text-indigo-600">Shop</a>
+
+    <!-- Cart with badge -->
+    <a routerLink="/cart" class="relative">
+      Cart
+      <span class="absolute -top-2 -right-3 text-xs bg-indigo-600 text-white px-1.5 rounded-full">
+        2
+      </span>
+    </a>
+
+    <a routerLink="/login">Login</a>
+
+    <a routerLink="/register"
+       class="btn-primary">
+      Sign up
+    </a>
+
+  </div>
+</nav>
   </header>
 
   <!-- Page -->
@@ -27,9 +38,9 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-white border-t py-6 mt-10">
+  <footer class="bg-white dark:bg-gray-900 border-t dark:border-gray-800">
     <div class="max-w-7xl mx-auto text-center text-gray-500 text-sm">
-      © 2026 ECom. Built with Angular + Tailwind
+      © 2026 eCom. Built with Angular + Tailwind
     </div>
   </footer>
 </div>

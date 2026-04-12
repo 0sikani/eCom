@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   template: `
     <section class="flex items-center justify-center min-h-[80vh]">
-      <div class="bg-white p-8 rounded-2xl shadow-md w-full max-w-md">
+      <div class="card p-8 w-full max-w-md">
 
         <h2 class="text-2xl font-bold mb-6 text-center">Create Account</h2>
 
@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
           <input class="input" placeholder="Email">
           <input type="password" class="input" placeholder="Password">
 
-          <button class="w-full bg-indigo-600 text-white py-2 rounded-lg">
+          <button class="w-full bg-indigo-600 text-white py-2 rounded-lg" class="hover:scale-105 active:scale-95 transition duration-200">
             Register
           </button>
         </div>

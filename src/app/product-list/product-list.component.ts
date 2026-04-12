@@ -11,36 +11,121 @@ import { RouterLink } from '@angular/router';
 
         <h1 class="text-3xl font-bold mb-10">All Products</h1>
 
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="grid md:grid-cols-4 gap-10">
 
-          @for (item of [1,2,3,4,5,6,7,8]; track item) {
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition overflow-hidden group">
+          <!-- 🔥 FILTER SIDEBAR -->
+          <aside class="space-y-6 sticky top-24 h-fit">
 
-              <div class="overflow-hidden">
-                <img src="https://via.placeholder.com/400"
-                     class="w-full h-56 object-cover group-hover:scale-105 transition duration-300"/>
+            <div class="card p-4">
+              <h3 class="font-semibold mb-3">Category</h3>
+              <div class="space-y-2 text-sm">
+                <label class="flex items-center gap-2">
+                  <input type="checkbox"> Electronics
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox"> Fashion
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox"> Home
+                </label>
               </div>
-
-              <div class="p-5">
-                <h3 class="font-semibold text-gray-800 mb-1">Premium Item</h3>
-                <p class="text-sm text-gray-500 mb-3">High quality product</p>
-
-                <div class="flex justify-between items-center">
-                  <span class="font-bold text-lg">$49.99</span>
-
-                  <a [routerLink]="['/products', item]"
-                     class="text-sm bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">
-                    View
-                  </a>
-                </div>
-              </div>
-
             </div>
-          }
+
+            <div class="card p-4">
+              <h3 class="font-semibold mb-3">Price</h3>
+              <input type="range" class="w-full">
+              <div class="flex justify-between text-sm text-gray-500 mt-2">
+                <span>$0</span>
+                <span>$500</span>
+              </div>
+            </div>
+
+          </aside>
+
+          <!-- 🛍️ PRODUCTS -->
+          <div class="md:col-span-3">
+
+            <!-- 🔥 SKELETON LOADING -->
+            @if (loading) {
+
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                @for (item of [1,2,3,4,5,6]; track item) {
+                  <div class="card p-4 space-y-4">
+                    <div class="skeleton h-40 w-full"></div>
+                    <div class="skeleton h-4 w-3/4"></div>
+                    <div class="skeleton h-4 w-1/2"></div>
+                  </div>
+                }
+
+              </div>
+
+            } @else {
+
+              <!-- REAL PRODUCTS -->
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                @for (item of products; track item) {
+
+                  <div class="card group overflow-hidden">
+
+                    <div class="relative overflow-hidden">
+                      <img 
+                        src="https://via.placeholder.com/400"
+                        class="w-full h-56 object-cover 
+                               group-hover:scale-110 
+                               transition duration-500"
+                      />
+
+                      <span class="absolute top-3 left-3 bg-indigo-600 text-white text-xs px-2 py-1 rounded">
+                        New
+                      </span>
+                    </div>
+
+                    <div class="p-5">
+                      <h3 class="font-semibold mb-1">Premium Item</h3>
+                      <p class="text-sm text-gray-500 mb-3">
+                        High quality product
+                      </p>
+
+                      <div class="flex justify-between items-center">
+                        <span class="font-bold text-lg">$49.99</span>
+
+                        <a 
+                          [routerLink]="['/products', item]"
+                          class="btn-primary text-sm">
+                          View
+                        </a>
+                      </div>
+                    </div>
+
+                  </div>
+
+                }
+
+              </div>
+
+            }
+
+          </div>
 
         </div>
+
       </div>
     </section>
   `
 })
-export class ProductListComponent {}
+export class ProductListComponent {
+
+  loading = true;
+
+  products = [1,2,3,4,5,6,7,8];
+
+  constructor() {
+    // 🔥 Simulate API delay
+    setTimeout(() => {
+      this.loading = false;
+    }, 1500);
+  }
+
+}
